@@ -92,9 +92,6 @@ document.getElementById("cancel-button").onclick = function () {
 
 function addEventListeners() {
   document
-    .querySelectorAll(".edit-btn")
-    .forEach((btn) => btn.addEventListener("click", () => editText(btn)));
-  document
     .querySelectorAll(".delete-btn")
     .forEach((btn) => btn.addEventListener("click", () => deleteText(btn)));
   document
