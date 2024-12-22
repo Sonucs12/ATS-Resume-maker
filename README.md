@@ -25,7 +25,7 @@ ATS Resume Maker is a simple and interactive tool for creating professional resu
 
 - **Portfolio**: [Sonu Kumar's Portfolio](https://sonucs-portfolio.netlify.app/)
 - **GitHub**: [GitHub Profile](https://github.com/Sonucs12)
-- **Live Demo**: [Add link if hosted online.](https://sonucs12.github.io/ATS-Resume-maker/)
+- **Live Demo**: [Click to View](https://sonucs12.github.io/ATS-Resume-maker/)
 
 ## 📚 Project Details
 
