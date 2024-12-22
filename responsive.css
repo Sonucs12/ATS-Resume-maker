@@ -1,0 +1,121 @@
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    height: 3.5rem;
+  }
+  .main-content {
+    margin-left: 0px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 100%;
+  }
+
+  #downloadBtn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    right: 0;
+    padding: 10px 5px;
+    background: #007bff;
+    color: white;
+    border: none;
+
+    cursor: pointer;
+  }
+  #downloadBtn i {
+    font-size: 15px;
+  }
+  .desktop {
+    display: none;
+  }
+
+  .sidebar {
+    position: fixed;
+    bottom: -100%;
+    transition: bottom 2s ease;
+    left: 0;
+    width: 100vw;
+    height: 4rem;
+    background-color: #111;
+    padding-top: 0px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 0;
+  }
+  .sidebar.show {
+    bottom: 0;
+  }
+
+  .nav-btn {
+    height: 3.5rem;
+  }
+  .a4.editing-on {
+    max-height: 540mm;
+  }
+  .tip:hover::after {
+    top: -30%;
+    font-weight: none;
+    left: 70px;
+  }
+  .logocont {
+    display: none;
+  }
+  .undo-redo-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 20px;
+  }
+
+  .buttons {
+    margin-top: 0;
+    padding-left: 0.5rem;
+    justify-content: flex-start;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    font-size: 12px;
+    padding-bottom: 0px;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+    gap: 20px;
+
+    width: 87vw;
+  }
+
+  .undo-btn {
+    margin-right: 5px;
+    margin-top: 0px;
+  }
+  .boldcnt {
+    margin-left: 20px;
+  }
+  .fontbutton {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+    height: 2rem;
+  }
+  #currentFontSize {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+  }
+  .sidebar-btn {
+    width: 80px;
+  }
+}

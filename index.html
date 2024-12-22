@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ats Resume</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-btn">
+        <i class="fa-solid fa-house"></i>
+      </div>
+      <button class="nav-btn">Templates</button>
+      <button class="nav-btn" data-tooltip="Feedback">💬</button>
+      <button class="nav-btn" data-tooltip="More">...</button>
+    </nav><main>
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Welcome to Resume Maker</h1>
+        <p>
+          Create a professional resume in minutes. Choose from ATS-compliant
+          templates to land your dream job!
+        </p>
+        <p class="use-on-laptop">
+          For the best experience, use on a laptop or desktop.
+        </p>
+        <button class="cta-btn" onclick="startCreating()">
+          Start Creating
+        </button>
+      </div>
+      <div class="template-preview">
+        <h2>Resume Templates</h2>
+        <div class="template-images">
+          <img src="template1.jpg" alt="Template 1" />
+          <img src="template1.jpg" alt="Template 2" />
+          <img src="template1.jpg" alt="Template 3" />
+        </div>
+        <div class="ats-info">
+          <h2>What is an ATS Resume?</h2>
+          <p>
+            An ATS (Applicant Tracking System) Resume is designed to pass
+            through automated recruitment software used by employers. With our
+            templates, your resume will:
+          </p>
+          <ul>
+            <li>Be correctly formatted for ATS scanners</li>
+            <li>Include essential keywords to match job descriptions</li>
+            <li>Have a clean and professional layout</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <p>© 2024 Design & Developed By Sonu Kumar | All Rights Reserved</p>
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/sonu-kumar-15b6b3239/"
+            target="_blank"
+            class="icon linkedin"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <a
+            href="https://github.com/Sonucs12"
+            target="_blank"
+            class="icon github"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a
+            href="https://sonucs-portfolio.netlify.app/"
+            target="_blank"
+            class="icon portfolio"
+          >
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

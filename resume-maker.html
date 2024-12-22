@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ats Resume</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="resume-maker.css" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-btn" onclick="goHome()">
+        <i class="fa-solid fa-house"></i>
+      </div>
+      <button class="nav-btn">Templates</button>
+      <button class="nav-btn" data-tooltip="Feedback">💬</button>
+      <button class="nav-btn" data-tooltip="More">...</button>
+    </nav>
+    <main id="editing-section">
+      <div class="sidebar">
+        <div class="buttons">
+          <div class="undo-btn">
+            <button
+              class="edit-btn btn tip"
+              data-tooltip="Editing Mode"
+              id="editbtn"
+            >
+              ✎</button
+            >Edit
+          </div>
+          <div class="undo-redo-btn">
+            <div class="undo-btn">
+              <button class="btn" onclick="undo()">
+                <img
+                  width="20"
+                  height="20"
+                  src="https://img.icons8.com/material-rounded/24/FFFFFF/undo.png"
+                  alt="undo"
+                /></button
+              >Undo
+            </div>
+            <div class="undo-btn">
+              <button class="btn" onclick="redo()">
+                <img
+                  width="20"
+                  height="20"
+                  src="https://img.icons8.com/material-rounded/24/FFFFFF/redo.png"
+                  alt="redo"
+                />
+              </button>
+              Redo
+            </div>
+          </div>
+          <div class="undo-btn boldcnt">
+            <button
+              class="bold-btn btn tip"
+              data-tooltip="Bold Text"
+              onclick="makeTextBold()"
+            >
+              <b>B</b></button
+            >Bold
+          </div>
+          <div class="undo-btn">
+            <div class="fontbutton">
+              <button
+                class="btn tip"
+                data-tooltip="Decrease Font Size"
+                onclick="changeFontSize(-1)"
+              >
+                <b>-</b>
+              </button>
+              <div id="currentFontSize">16px</div>
+              <button
+                class="btn tip"
+                data-tooltip="Increase Font Size"
+                onclick="changeFontSize(1)"
+              >
+                <b>+</b>
+              </button>
+            </div>
+            Font
+          </div>
+          <div class="undo-btn">
+            <button id="addlink" class="btn tip"  data-tooltip="Add Link to Text">
+              <i class="fa-solid fa-link"></i></button
+            >Link
+          </div>
+        </div>
+        <button class="sidebar-btn downloadBtn" id="downloadBtn">
+          <b><i class="fa-solid fa-circle-down"></i></b>
+        </button>
+      </div>
+
+      <div class="main-content">
+        <div id="resume" class="a4 editing-on">
+          <!-- Name -->
+          <h1 id="name" class="center">
+            <span class="editing-content">SONU KUMAR</span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+          </h1>
+
+          <!-- Contact Information -->
+          <p id="contact" class="center">
+            <span class="editing-content">
+              +91 99485547xx | abc@gmail.com | Muzaffarpur, Bihar |
+              <a href="https://sonucs-portfolio.netlify.app/" target="_blank"
+                >Portfolio</a
+              >
+            </span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+          </p>
+
+          <!-- Summary -->
+          <h2 class="section-title">
+            <span class="editing-content">SUMMARY</span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+            <hr />
+          </h2>
+
+          <p id="summary">
+            <span class="editing-content">
+              I can learn new technologies and adjust to different environments
+              quickly. I'm looking for a role where I can use my tech skills and
+              experiences for technology in a company that's always moving
+              forward.
+            </span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+          </p>
+
+          <!-- Education -->
+          <h2 class="section-title">
+            <span class="editing-content">EDUCATION QUALIFICATION</span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+            <hr />
+          </h2>
+
+          <ul id="education">
+            <li>
+              <span>
+                <span class="editing-content"
+                  ><b>Diploma in Computer Science and Engineering</b></span
+                >
+                <span class="controls">
+                  <button class="delete-btn" onclick="deleteSection(this)">
+                    🗑
+                  </button>
+                </span>
+              </span>
+
+              <span class="date"
+                ><span class="editing-content">20XX-20XX</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              ><br /><span>
+                <span class="editing-content"
+                  >Government Polytechnic Darbhanga<br />CGPA: 9.08 or
+                  83.33%</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              >
+            </li>
+
+            <li class="margin-bottom">
+              <span>
+                <span class="editing-content"><b>Graduation</b></span>
+                <span class="controls">
+                  <button class="delete-btn" onclick="deleteSection(this)">
+                    🗑
+                  </button>
+                </span>
+              </span>
+
+              <span class="date"
+                ><span class="editing-content">20XX-20XX</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              >
+              <br /><span>
+                <span class="editing-content"
+                  >ABC college - Patna<br />CGPA: 9.08 or 83.33%</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              >
+            </li>
+
+            <li class="margin-bottom">
+              <span>
+                <span class="editing-content"><b>12th</b></span>
+                <span class="controls">
+                  <button class="delete-btn" onclick="deleteSection(this)">
+                    🗑
+                  </button>
+                </span>
+              </span>
+
+              <span class="date"
+                ><span class="editing-content">20XX-20XX</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              ><br />
+              <span>
+                <span class="editing-content"
+                  >ABC college<br />CGPA: 9.08 or 83.33%</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              >
+            </li>
+
+            <li class="margin-bottom">
+              <span>
+                <span class="editing-content"><b>10th</b></span>
+                <span class="controls">
+                  <button class="delete-btn" onclick="deleteSection(this)">
+                    🗑
+                  </button>
+                </span>
+              </span>
+
+              <span class="date"
+                ><span class="editing-content">20XX-20XX</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              ><br /><span>
+                <span class="editing-content"
+                  >ABC school name<br />CGPA: 9.08 or 83.33%</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              >
+            </li>
+
+            <button class="add-btn" onclick="addBullet(this)">➕</button>
+          </ul>
+
+          <!-- Experience -->
+          <h2 class="section-title">
+            <span class="editing-content">EXPERIENCE</span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+            <hr />
+          </h2>
+
+          <ul id="experiences">
+            <li>
+              <span class="editing-content"
+                >Ex- Microsoft ,Software developer, 3 Years</span
+              >
+              <span class="date"
+                ><span class="editing-content">20XX-20XX</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              >
+              <span class="controls">
+                <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+              </span>
+            </li>
+            <button class="add-btn" onclick="addBullet(this)">➕</button>
+          </ul>
+          <!-- projects -->
+          <h2 class="section-title">
+            <span class="editing-content">PROJECTS</span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+            <hr />
+          </h2>
+
+          <ul id="projects">
+            <li>
+              <span class="editing-content"
+                >Web development- Claculator, Ats Resume,BMI Calculator</span
+              >
+
+              <span class="controls">
+                <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+              </span>
+            </li>
+            <button class="add-btn" onclick="addBullet(this)">➕</button>
+          </ul>
+          <!-- Internship -->
+          <h2 class="section-title">
+            <span class="editing-content">INTERNSHIP</span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+            <hr />
+          </h2>
+
+          <ul id="internship">
+            <li>
+              <span>
+                <span class="editing-content"
+                  ><b>Aakash Traning Center, Patna</b></span
+                >
+                <span class="controls">
+                  <button class="delete-btn" onclick="deleteSection(this)">
+                    🗑
+                  </button>
+                </span>
+              </span>
+
+              <span class="date"
+                ><span class="editing-content">20XX-20XX</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              >
+              <br />
+              <span>
+                <span class="editing-content">Intern in IoT</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              >
+            </li>
+            <button class="add-btn" onclick="addBullet(this)">➕</button>
+          </ul>
+
+          <!-- Skills -->
+          <h2 class="section-title">
+            <span class="editing-content">SKILLS</span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+            <hr />
+          </h2>
+
+          <div class="skills-section">
+            <div id="technical-skills" class="skills-column">
+              <h3>
+                <span class="editing-content">Technical Skills</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span>
+              </h3>
+              <ul id="skills">
+                <li>
+                  <span class="editing-content">HTML, CSS, JavaScript</span>
+                  <span class="controls">
+                    <button class="delete-btn" onclick="deleteSection(this)">
+                      🗑
+                    </button>
+                  </span>
+                </li>
+                <button class="add-btn" onclick="addBullet(this)">➕</button>
+              </ul>
+            </div>
+            <div id="soft-skills" class="skills-column">
+              <h3>
+                <span class="editing-content">Soft Skills</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span>
+              </h3>
+              <ul id="skills">
+                <li>
+                  <span class="editing-content">Communication</span>
+                  <span class="controls">
+                    <button class="delete-btn" onclick="deleteSection(this)">
+                      🗑
+                    </button>
+                  </span>
+                </li>
+                <button class="add-btn" onclick="addBullet(this)">➕</button>
+              </ul>
+            </div>
+          </div>
+          <!-- Certifications -->
+          <h2 class="section-title">
+            <span class="editing-content">CERTIFICATION COURSE</span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+            <hr />
+          </h2>
+
+          <ul id="certifications">
+            <li>
+              <span class="editing-content"
+                >KYP Course, Government Polytechnic Darbhanga</span
+              >
+              <span class="date"
+                ><span class="editing-content">20XX-20XX</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              >
+              <span class="controls">
+                <button class="delete-btn" onclick="deleteSection(this)">
+                  🗑
+                </button>
+              </span>
+            </li>
+            <li>
+              <span class="editing-content"
+                >Video Editing Basics, Great Learning Academy</span
+              >
+              <span class="date"
+                ><span class="editing-content">20XX-20XX</span
+                ><span class="controls">
+                  <button class="delete-btn" onclick="deleteText(this)">
+                    🗑
+                  </button>
+                </span></span
+              >
+              <span class="controls">
+                <button class="delete-btn" onclick="deleteSection(this)">
+                  🗑
+                </button>
+              </span>
+            </li>
+
+            <button class="add-btn" onclick="addBullet(this)">➕</button>
+          </ul>
+          <!-- hobbies -->
+          <h2 class="section-title">
+            <span class="editing-content">HOBBIES & INTERESTS</span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+            <hr />
+          </h2>
+
+          <ul id="hobbies">
+            <li>
+              <span class="editing-content">Playing Cricket</span>
+
+              <span class="controls">
+                <button class="delete-btn" onclick="deleteSection(this)">
+                  🗑
+                </button>
+              </span>
+            </li>
+            <li>
+              <span class="editing-content">Dancing</span>
+
+              <span class="controls">
+                <button class="delete-btn" onclick="deleteSection(this)">
+                  🗑
+                </button>
+              </span>
+            </li>
+
+            <button class="add-btn" onclick="addBullet(this)">➕</button>
+          </ul>
+          <!-- languages -->
+          <h2 class="section-title">
+            <span class="editing-content">LANGUAGES</span>
+            <span class="controls">
+              <button class="delete-btn" onclick="deleteText(this)">🗑</button>
+            </span>
+            <hr />
+          </h2>
+
+          <ul id="languages">
+            <li>
+              <span class="editing-content">Hindi (Native)</span>
+
+              <span class="controls">
+                <button class="delete-btn" onclick="deleteSection(this)">
+                  🗑
+                </button>
+              </span>
+            </li>
+            <li>
+              <span class="editing-content">English (Fluent)</span>
+
+              <span class="controls">
+                <button class="delete-btn" onclick="deleteSection(this)">
+                  🗑
+                </button>
+              </span>
+            </li>
+
+            <button class="add-btn" onclick="addBullet(this)">➕</button>
+          </ul>
+        </div>
+      </div>
+      <!-- Popup for link input -->
+      <div id="link-popup">
+        <h3>Add Link</h3>
+
+        <div id="selected-text"></div>
+        <label for="link-input">Enter Link:</label>
+        <input type="text" id="link-input" />
+        <div class="popup-buttons">
+          <button id="ok-button">OK</button>
+          <button id="cancel-button">Cancel</button>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="resume-maker.js"></script>
+  </body>
+</html>
