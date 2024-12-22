@@ -36,6 +36,7 @@ This project is part of Sonu Kumar's portfolio and demonstrates his expertise in
 - **Interactive Sidebar**: Includes buttons for text customization and resume download.
 - **Feedback & More Options**: Sidebar contains feedback and placeholder for additional features.
 - **Hover Tooltips**: Icons on the sidebar show tooltips for better navigation.
+![Screenshot 2024-12-22 212937](https://github.com/user-attachments/assets/7563823f-366c-47b8-9e71-a7aec769e8fe)
 
 ## 🧑‍💻 About the Author
 
