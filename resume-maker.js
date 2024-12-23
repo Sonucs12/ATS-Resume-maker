@@ -39,7 +39,7 @@ function restoreState(state) {
 }
 // Handle the Add Link button click
 let selectedRange = null;
-
+let mainContent = document.querySelector(".main-content")
 document.getElementById("addlink").addEventListener("click", function () {
   const selection = window.getSelection();
 
@@ -56,6 +56,10 @@ document.getElementById("addlink").addEventListener("click", function () {
         selection.toString();
       const popup = document.getElementById("link-popup");
       popup.style.display = "block";
+     
+      mainContent.style.cssText = "filter: blur(5px); background-color: rgba(91, 88, 91, 0.77);";
+
+     
     } else {
       alert("Enable edit mode to add a link.");
     }
@@ -78,6 +82,7 @@ document.getElementById("ok-button").onclick = function () {
     selectedRange = null;
     document.getElementById("link-popup").style.display = "none";
     document.getElementById("link-input").value = "";
+    mainContent.style.cssText = "";
   } else {
     document.getElementById("link-input").placeholder =
       "Please enter a valid URL";
@@ -87,6 +92,7 @@ document.getElementById("ok-button").onclick = function () {
 document.getElementById("cancel-button").onclick = function () {
   document.getElementById("link-popup").style.display = "none";
   document.getElementById("link-input").value = "";
+  mainContent.style.cssText = "";
   selectedRange = null;
 };
 
@@ -146,9 +152,9 @@ function editText(button) {
 
 function getMaxHeight() {
   if (window.innerWidth <= 768) {
-    return 490 * 3.77937;
+    return 500 * 3.77937;
   } else {
-    return 345 * 3.77937;
+    return 355 * 3.77937;
   }
 }
 
@@ -171,8 +177,9 @@ function addBullet(button) {
   li.innerHTML =
     '<span class="editing-content">Add new items</span><span class="date"><span class="editing-content">2024-2025</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)">🗑</button></span></span><span class="controls"> <button class="delete-btn" onclick="deleteText(this)">🗑</button></span>';
   if (ul.id === "education") {
+    li.classList.add("margin-bottom");
     li.innerHTML =
-      '<span class = "margin-bottom"><span class="editing-content"><b>Graduation</b></span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)">🗑</button></span></span><span class="date"><span class="editing-content">July 2023</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)">🗑</button></span></span><br /><span><span class="editing-content">ABC college - Patna<br />CGPA: 9.08 or 83.33%</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)">🗑</button></span></span>';
+      '<span class="editing-content"><b>Graduation</b></span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)">🗑</button></span></span><span class="date"><span class="editing-content">July 2023</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)">🗑</button></span></span><br /><span><span class="editing-content">ABC college - Patna<br />CGPA: 9.08 or 83.33%</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)">🗑</button></span>';
 
     li.style.marginTop = "10px";
   }
@@ -273,8 +280,8 @@ document.getElementById("downloadBtn").addEventListener("click", function () {
       resume.classList.add("editing-on");
       showControls(deleteButtons, addButtons);
     },
-    x: 5,
-    y: 5,
+    x: 0.5,
+    y: 7,
     html2canvas: {
       scale: 0.25,
       useCORS: true,

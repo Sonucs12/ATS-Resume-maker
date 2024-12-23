@@ -7,7 +7,7 @@
   .main-content {
     margin-left: 0px;
     margin-bottom: 50px;
-    width: 100%;
+  
     height: 100%;
   }
 
@@ -46,7 +46,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    z-index: 0;
+    z-index: 1000;
   }
   .sidebar.show {
     bottom: 0;
