@@ -152,9 +152,9 @@ function editText(button) {
 
 function getMaxHeight() {
   if (window.innerWidth <= 768) {
-    return 500 * 3.77937;
+    return 450 * 3.77937;
   } else {
-    return 355 * 3.77937;
+    return 325 * 3.77937;
   }
 }
 
@@ -175,37 +175,38 @@ function addBullet(button) {
 
   const li = document.createElement("li");
   li.innerHTML =
-    '<span class="editing-content">Add new items</span><span class="date"><span class="editing-content">2024-2025</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)">🗑</button></span></span><span class="controls"> <button class="delete-btn" onclick="deleteText(this)">🗑</button></span>';
+    '<span class="editing-content">Add new items</span><span class="date"><span class="editing-content">2024-2025</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)"><i class="fa-solid fa-trash"></i></button></span></span><span class="controls"> <button class="delete-btn" onclick="deleteText(this)"><i class="fa-solid fa-trash"></i></button></span>';
+
   if (ul.id === "education") {
     li.classList.add("margin-bottom");
     li.innerHTML =
-      '<span class="editing-content"><b>Graduation</b></span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)">🗑</button></span></span><span class="date"><span class="editing-content">July 2023</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)">🗑</button></span></span><br /><span><span class="editing-content">ABC college - Patna<br />CGPA: 9.08 or 83.33%</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)">🗑</button></span>';
+      '<span class="editing-content"><b>Graduation</b></span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i></button></span><span class="date"><span class="editing-content">July 2023</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)"><i class="fa-solid fa-trash"></i></button></span></span><br /><span><span class="editing-content">ABC college - Patna<br />CGPA: 9.08 or 83.33%</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)"><i class="fa-solid fa-trash"></i></button></span>';
 
     li.style.marginTop = "10px";
   }
   if (ul.id === "skills") {
     li.innerHTML =
-      '<span class="editing-content">Add new skills</span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)">🗑</button></span>';
+      '<span class="editing-content">Add new skills</span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i></button></span>';
   }
   if (ul.id === "certifications") {
     li.innerHTML =
-      '<span class="editing-content">Add new Certification</span><span class="date"><span class="editing-content">July 2023</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)">🗑</button></span></span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)">🗑</button></span>';
+      '<span class="editing-content">Add new Certification</span><span class="date"><span class="editing-content">July 2023</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)"><i class="fa-solid fa-trash"></i></button></span></span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i></button></span>';
   }
   if (ul.id === "hobbies") {
     li.innerHTML =
-      '<span class="editing-content">Add new hobbies</span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)">🗑</button></span>';
+      '<span class="editing-content">Add new hobbies</span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i></button></span>';
   }
   if (ul.id === "experiences") {
     li.innerHTML =
-      '<span class="editing-content">Add new experience</span><span class="date"><span class="editing-content">July 2023</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)">🗑</button></span></span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)">🗑</button></span>';
+      '<span class="editing-content">Add new experience</span><span class="date"><span class="editing-content">July 2023</span><span class="controls"><button class="delete-btn" onclick="deleteText(this)"><i class="fa-solid fa-trash"></i></button></span></span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i></button></span>';
   }
   if (ul.id === "projects") {
     li.innerHTML =
-      '<span class="editing-content">Add new projects</span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)">🗑</button></span>';
+      '<span class="editing-content">Add new projects</span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i></button></span>';
   }
   if (ul.id === "languages") {
     li.innerHTML =
-      '<span class="editing-content">Add new languages</span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)">🗑</button></span>';
+      '<span class="editing-content">Add new languages</span><span class="controls"><button class="delete-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i></button></span>';
   }
   ul.insertBefore(li, button);
 

@@ -213,20 +213,32 @@ ul li .date {
   display: inline-block;
   margin-left: 5px;
 }
-.edit-btn,
 .delete-btn,
-.add-btn {
+.add-btn{
   background: none;
   border: none;
-  color: #007bff;
-  font-size: 14px;
+ 
   cursor: pointer;
+}
+.delete-btn i{
+  color: red; 
+  font-weight: 900;
+ 
+}
+.add-btn i{
+  color: #048954; 
+  font-weight: 900;
+  font-size: 15px;
+}
+.sidebar i{
+  font-size: 12px;
 }
 .edit-btn:hover,
 .delete-btn:hover,
 .add-btn:hover {
   color: #0056b3;
 }
+
 #downloadBtn {
   width: 100px;
   position: fixed;
