@@ -45,7 +45,7 @@ This project is part of Sonu Kumar's portfolio and demonstrates his expertise in
 - **Education**: Diploma in Computer Science and Engineering  
 - **Skills**: HTML, CSS, JavaScript, Web Development  
 - **LinkedIn**: [Sonu Kumar](https://www.linkedin.com/in/sonu-kumar-15b6b3239/)  
-- **YouTube**: [CodingSuno](https://www.youtube.com/@CodingSuno)  
+- **YouTube**: [CodingSuno](https://www.youtube.com/@CodingSuno-g4l)  
 
 Feel free to reach out via GitHub or LinkedIn for any queries or suggestions!
 
